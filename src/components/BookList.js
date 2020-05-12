@@ -13,12 +13,12 @@ export default class Booklist extends Component {
           <div className='container'>
             
             <Title name='Nuestros' title='libros'/>  
-            
             <div className='row'>
               <BookConsumer>
                 { value =>{
                   return value.books.map( book => {
-                    return <Book key={book.id} book={ book }/>
+                    const {id} = book;
+                    return <Book key={id + 3000} book={ book }/>
                   });
                 }}
               </BookConsumer>
